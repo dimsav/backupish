@@ -1,4 +1,9 @@
 Backupish
 =========
 
-A bash script to upload backups of directories and mysql to dropbox
+A bash script to create backups of directories and mysql databases. Optionally upload to dropbox
+
+Requirements:
+
+* zip command
+* mysqldump command
