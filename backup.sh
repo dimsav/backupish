@@ -1,40 +1,10 @@
 #!/bin/sh
 
-# ============================================
-# Settings for the directories to be backed up
-# ============================================
+# =================
+# Import the config
+# =================
 
-directories_base_dir='..'
-directories='
-    myproject
-'
-databases='
-    mydb
-    another_db
-'
-
-# ============================================
-# Settings for the mysql connection
-# ============================================
-
-MYSQL_USER="homestead"
-MYSQL_PASSWORD="secret"
-
-# ===============================================
-# Directory containing the temporary backup files
-# ===============================================
-
-backups_dir='backups'
-thetime=`date +%Y-%m-%d_%H-%M-%S`
-backup_dir="$backups_dir/$thetime"
-
-# ========================================================
-# Choose if you want to delete the backups after uploading
-# ========================================================
-
-delete_created_backups=true
-
-
+. ./config.sh
 
 # =============
 # The script...
