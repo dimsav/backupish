@@ -1,10 +1,12 @@
 #!/bin/sh
 
+CURRENT_DIR="$( cd "$( dirname "$0" )" && pwd )"
+
 # =================
 # Import the config
 # =================
 
-. ./config.sh
+. $CURRENT_DIR/config.sh
 
 # =============
 # The script...
@@ -25,7 +27,7 @@ done
 
 if [ "$upload_to_dropbox" = "true" ]; then
     echo "Uploading to dropbox"
-    bash vendor/dropbox_uploader.sh upload $backup_dir $thetime
+    bash $CURRENT_DIR/vendor/dropbox_uploader.sh upload $backup_dir $thetime
 fi
 
 if [ "$delete_created_backups" = "true" ]; then
