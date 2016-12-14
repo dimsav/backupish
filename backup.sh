@@ -22,9 +22,7 @@ done
 
 echo "Creating db dumps"
 for db in $databases; do
-  mysqldump --force --opt --user=$MYSQL_USER -p$MYSQL_PASSWORD --databases $db > "$db.sql"
-  gzip "$db.sql"
-  mv "$db.sql.gz" "$backup_dir/db_$db.sql.gz"
+  mysqldump --force --opt --user=$MYSQL_USER -p$MYSQL_PASSWORD --databases $db | gzip > "$backup_dir/db_$db.gz"
 done
 
 if [ "$upload_to_dropbox" = "true" ]; then
